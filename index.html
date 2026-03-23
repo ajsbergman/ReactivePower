@@ -16,7 +16,10 @@
 </p>
     <h3>Voltage and Current</h3>
       <p>The two most fundamental quantities at any point in the power system are the voltage and the current. The voltage is the energy (per unit charge and measured with respect to the ground), and the current is the speed and direction at which the charge is flowing. As a result of Tesla winning his <a href = "https://en.wikipedia.org/wiki/War_of_the_currents">famous dispute</a> with Edison, almost all the power system uses alternating current. This means that the current changes direction 120 times per second (60 Hertz) forming a sine wave, shown as a red line in figure 1. At the same time, the voltage also moves up and down in a sine wave, alternating between positive and negative, shown as a blue line in figure 1. As you can see from the figure, the voltage oscillations and the current oscillations do not have to be aligned. One can measure the difference in the peaks as a length of time, but generally people describe it as an angle – because, well, trigonometry turns out to be really useful. Curves that are completely aligned differ by 0 degrees, while curves that are completely out of alignment, where the maximum of one is at the same time as the minimum of the other, are said to be 180 degrees out of phase. </p>
+<figure>
 <img src = "fig1.svg" alt = "Voltage and Current Sine Waves">
+  <figcaption>Figure 1</figcaption>
+</figure>
       
     <p>This angle between the voltage and the current, called the phase angle by the electrical engineers, is the underlying reality of reactive power. Put another way, reactive power is a bookkeeping device to keep track of this angle. A high level of reactive power means that the angle is closer to 90 degrees, while a negative level of reactive power means that the angle is closer to -90 degrees. (This direction is really a matter of convention, and one could also define things in the opposite way.)
 The amount of power available at a point on a circuit is the product of the voltage and the current. The product of these two sine waves is the [???] line in figure 1. Like the voltage and current, the power oscillates, but unlike those, it has a positive average value. This average is the power available to do work, what the engineers call real power (as opposed to reactive power). If the maximum voltage multiplied by the maximum current gives you the “apparent power”, the power that would be available if everything were in phase, the phase angle determines how much of that apparent power is actually available to do work, with less and less real power as the phase angle gets closer to plus or minus 90 degrees. The more out of phase voltage and current are, the less real power is available.</p>
@@ -27,7 +30,11 @@ The amount of power available at a point on a circuit is the product of the volt
 
 <h2>Resistors, capacitors and inductors, oh my</h2>
       <p>The timing difference between voltage and current, and hence the amount of reactive power, is a result of the operation of the entire grid, from generators to transmission to consumers. The grid is awash in resistors, capacitors and inductors, with most load being in the form of resistance (such as an electrical heater) or inductance (such as a motor). Each of these has a different relation between current and voltage. The voltage drop across a resistor (the energy difference from one end of the resistor to the other) is directly proportional to the current that goes through the resistor. In other words, for a resistor, the voltage drop is in phase with the current. Inductors and capacitors, on the other hand, have their voltage drops 90 degrees and -90 degrees out of phase with the current, respectively.  This means that they shift the phase angle (see figure 2), and the electrical engineers call this producing or absorbing reactive power.</p>
+      
+      <figure>
       <img src = "fig2.svg" alt = "Phase Angles">
+        <figurecaption>Figure 2</figurecaption>
+      </figure>
 
   <h3>Reactive power and voltage</h3>
      <p>This naturally leads to the relation between reactive power and voltage. It turns out that transmission lines act a bit like inductors (they also have resistance and capacitance, but you can ignore those for a short, lossless line). This means that the change in voltage from one end of the line to the other is 90 degrees out of phase with the current. The voltage at the end of the line is lowest when the initial voltage and the voltage drop are aligned. Since the voltage drop due to the transmission line is 90 degrees out of phase from the current, the voltage drop is highest when the current is out of phase with the initial voltage by 90 degrees. In other words, the voltage drop is higher when the phase angle is closer to 90 degrees. </p>
@@ -36,12 +43,21 @@ The amount of power available at a point on a circuit is the product of the volt
       
 <p>Since the operation of the power system needs voltages to not drop too much, high phase angles can cause trouble. Depending on the convention, you could say that in this situation, one needs more or less reactive power on the system. Most load is a combination of inductors and resistors, which lead to positive phase angles and voltage drops. If the voltage drops are too large, there are a variety of things one can do to compensate. One is to add capacitors to the system because they act in an opposite way from inductors, helping keep voltages in their desired range.</p>
 
-<img src = "fig3.svg" alt = "Voltage Drops">
+<figure>
+  <img src = "fig3.svg" alt = "Voltage Drops">
+  <figurecaption>Figure 3</figurecaption>
+</figure>
+      <figure>
 <img src = "fig4.gif" alt = "Animated Voltage Drops">
+        <figurecaption>Figure 4</figurecaption>
+      </figure>
 
 <h3>Generators and reactive power</h3>
       <p>The phase angle also affects the operation and stability of generators. Much of the electricity on the grid (but a lot less than there used to be!) arises from spinning generators. These generators work by rotating a magnetic field through coils of wire to produce a voltage. The rotating magnetic field arises from the “rotor”, which must be pushed along by whatever fuels the generator. Here again, reactive power – the phase angle – plays a role. This is because the currents in the wires (the “armature winding” in the “stator” if you prefer) make their own magnetic field. If the phase angle is zero, this magnetic field is 90 degrees displaced from the magnetic field of the rotor. But if the phase angle changes, the rotor magnetic field is no longer perpendicular to the field arising from the electrical current. This is illustrated in figure 5.</p>
+      <figure>
       <img src = "fig5.svg" alt = "Generator Magnetic Fields">
+        <figurecaption>Figure 5</figurecaption>
+      </figure>
 <p>Sometimes one hears this described as a generator producing reactive power, but I think that’s misleading. The phase angle is really a function of the load on the grid. Instead, the phase angle affects the operating conditions of the generator. Because the magnetic field from the currents in the stator now partially points in a direction that is opposite to the field from the rotor, counteracting its ability to generate voltage, the voltage produced by the generator could decline. To compensate for this and keep the voltage at the desired level, the operator of the generator must increase the generator’s magnetic field. However, there are limits on how much that magnetic field can increase because of excess heating, which restricts the range of phase angles where the generator can operate. </p>
       <h3>Rotor angle stability</h3>
       <p>Generators all must spin at the same rate to maintain the frequency of the power system. But people are continually flipping appliances off and on, varying the amount of energy a generator must provide. Even more significant are faults where a transmission line breaks or short circuits or a generator goes offline. Generators must be able to maintain their synchronized rotation both through these small changes in load and through these larger disruptive events.</p>
